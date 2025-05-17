@@ -1,4 +1,4 @@
-# Používateľská príručka k bakalárskej práci  
+# Systémová príručka k bakalárskej práci  
 
 ---
 Tento repozitár obsahuje implementáciu a analýzu, ktorá bola vypracovaná v rámci bakalárskej práce s názvom:  

@@ -82,7 +82,7 @@ for zhlk_id in sorted(df["cluster"].unique()):
     value_counts = pd.Series(all_weeks).value_counts(normalize=True).sort_index()
     zhluk_freq[zhlk_id] = value_counts
 
-# --- Tabulka frekvencii ---
+#tabulka frekvencii
 df_freq = pd.DataFrame(zhluk_freq).fillna(0)
 df_freq.index.name = "weekly_cluster"
 df_freq.columns.name = "yearly_cluster"

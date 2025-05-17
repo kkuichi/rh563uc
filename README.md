@@ -69,7 +69,7 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
   Matica DTW vzdialeností medzi priemernými profilmi denných zhlukov.
 
 - `weekly_patterns.csv`  
-  Týždenné vzory reprezentované ako reťazce 7 denných typov (napr. `0123204`).
+  Týždenné vzory reprezentované ako reťazce 7 denných typov (napr. 0123204).
 
 - `weekly_patterns_clustered_5.csv`  
   Výsledky zhlukovania týždenných šablón do 5 týždenných typov.

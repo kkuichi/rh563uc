@@ -63,7 +63,7 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
   Mapa indexov (dataid, day) pre `dtw_matrix_days.npy`.
 
 - `daily_clusters_6.csv`  
-  Výsledky zhlukovania dní do 6 denných typov (k=6) s priradením ku každému dňu.
+  Výsledky zhlukovania dní do 6 denných typov s priradením ku každému dňu.
 
 - `cluster_similarity_matrix.csv`  
   Matica DTW vzdialeností medzi priemernými profilmi denných zhlukov.
@@ -72,7 +72,7 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
   Týždenné vzory reprezentované ako reťazce 7 denných typov (napr. `0123204`).
 
 - `weekly_patterns_clustered_5.csv`  
-  Výsledky zhlukovania týždenných šablón do 5 týždenných typov (k=5).
+  Výsledky zhlukovania týždenných šablón do 5 týždenných typov.
 
 - `weekly_cluster_similarity_matrix.csv`  
   Matica podobnosti medzi medoidmi týždenných zhlukov, použitá na ročné DTW.
@@ -81,7 +81,7 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
   Ročné vektory pre každú domácnosť (sekvencie 52 týždňových zhlukov).
 
 - `yearly_clustered_k4.csv`  
-  Finálne zhlukovanie domácností do 4 ročných skupín (k=4) na základe ich ročného profilu.
+  Finálne zhlukovanie domácností do 4 ročných skupín na základe ich ročného profilu.
 
 - `cluster_monthly_statistics.csv`  
   Agregovaná mesačná spotreba podľa ročného zhluku, vrátane priemeru za celý rok.

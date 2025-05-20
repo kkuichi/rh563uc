@@ -5,7 +5,7 @@ from tslearn.metrics import dtw
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#nacitanie suboru vektorov a suboru zhlukov pre denné vektory
+#načitanie suboru vektorov a suboru zhlukov pre denné vektory
 vektory = pd.read_csv("daily_15min_vectors.csv")
 zhluk_number = pd.read_csv("daily_clusters_6.csv")
 
@@ -32,7 +32,7 @@ denne_profiles = df_merged.groupby("cluster")[list(range(96))].mean().sort_index
 print("\npriemerne profily zhlukov:")
 print(denne_profiles.head())
 
-#vypočet DTW matice na zaklade vzdialenosti medzi dňami
+#vypočet DTW matice na základe vzdialenosti medzi dňami
 k_zhluk = denne_profiles.shape[0]
 distance_matrix = np.zeros((k_zhluk, k_zhluk))
 

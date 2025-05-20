@@ -23,7 +23,7 @@ if os.path.exists(ciast_matica):
         start_i = int(f.read().strip())
     print(f"pokračovanie od riadku {start_i} / {riadky_n}")
 else:
-    dtw_matrix = np.zeros((riadky_n, riadky_n))
+    dtw_matrix = np.zeros((riadky_n, riadky_n)) #prázdna symetrická matica vzdialeností
     start_i = 0
     print("výpočet od začiatku")
 
@@ -31,13 +31,14 @@ else:
 start_time = time.time()
 times = []
 
+#výpočet DTW vzdialeností medzi každými dvomi dennými vektormi
 for i in range(start_i, riadky_n):
     iter_start = time.time()
 
     for j in range(i + 1, riadky_n):
-        vzdialenost = dtw(X[i], X[j])
+        vzdialenost = dtw(X[i], X[j]) #DTW medzi dňami i a j (96 prvkov)
         dtw_matrix[i, j] = vzdialenost
-        dtw_matrix[j, i] = vzdialenost
+        dtw_matrix[j, i] = vzdialenost #symetrické
 
     iter_end = time.time()
     elapsed = iter_end - iter_start

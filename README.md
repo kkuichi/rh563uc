@@ -5,7 +5,7 @@ Tento repozitár obsahuje implementáciu a analýzu, ktorá bola vypracovaná v 
 **„Segmentovanie zákazníkov pre distribúciu elektrickej energie“**.
 
 Cieľom je segmentovať zákazníkov na základe ich správania a úrovne spotreby elektrickej energie.  
-Na tento účel sa používajú 15-minútové časové vzory spotreby , ktoré sú ďalej zhlukovane na úrovni dní, týždňov a rokov pomocou algoritmu K-Medoids a metriky DTW (Dynamic Time Warping).
+Na tento účel sa používajú 15-minútové časové vzory spotreby , ktoré sú ďalej zhlukovane na úrovni dní, týždňov a rokov pomocou algoritmu K-medoids a metriky DTW (Dynamic Time Warping).
 
 
 ## Dáta
@@ -83,4 +83,4 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
 - `cluster_monthly_statistics.csv`  
   Agregovaná mesačná spotreba podľa ročného zhluku, vrátane priemeru za celý rok.
 
-- V priečinku `Grafy` sa nachádzajú aj vizualizácie vytvorené na základe kompletných dát zo všetkých fáz analýzy
+- V priečinku `Grafy` sa nachádzajú aj vizualizácie vytvorené na základe kompletných dát zo všetkých fáz analýzy.

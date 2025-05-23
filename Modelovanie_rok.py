@@ -70,12 +70,11 @@ plt.show()
 
 
 #ročné vektry
-
 #načítanie dát
 tyzd_patterns_df = pd.read_csv("weekly_patterns_clustered_5.csv", dtype={"cluster": str})
 tyzd_patterns_df["week_start"] = pd.to_datetime(tyzd_patterns_df["week_start"], errors="coerce")
 
-#Odstranenie neúplných týždňov
+#odstranenie neúplných týždňov
 tyzd_patterns_df = tyzd_patterns_df[tyzd_patterns_df["cluster"].str.len() == 7].copy()
 
 #výpočet ISO roka a čísla týždňa (rok nie je viazaný na dátum, ale na poradie týždňov začínajúce pondelkom)
@@ -125,7 +124,7 @@ print(missing_df.head())
 from sklearn_extra.cluster import KMedoids
 from sklearn.metrics import silhouette_score
 
-# načitanie dat
+#načitanie dat
 df = pd.read_csv("yearly_weekly_vectors.csv")
 weekly_sim = pd.read_csv("weekly_cluster_similarity_matrix.csv", index_col=0).values
 week_cols = [f"w{i}" for i in range(52)]
@@ -164,7 +163,7 @@ def tyzd_absen_na_nearest_neighbor(row):
 print(f"\npočet ročnych vektorov po filtrovani: {len(df)}")
 df[week_cols] = df.apply(tyzd_absen_na_nearest_neighbor, axis=1) #nahradzovanie -1 najblizsim tyzdennym zhlukom
 
-# vypocet DTW medzi vektormi
+#vypocet DTW medzi vektormi
 def dtw_rok_vector(v1, v2, sim_matrix):
     n, m = len(v1), len(v2)
     dp = np.full((n + 1, m + 1), np.inf)

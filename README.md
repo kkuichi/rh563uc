@@ -7,7 +7,6 @@ Tento repozitár obsahuje implementáciu a analýzu, ktorá bola vypracovaná v 
 Cieľom je segmentovať zákazníkov na základe ich správania a úrovne spotreby elektrickej energie.  
 Na tento účel sa používajú 15-minútové časové vzory spotreby , ktoré sú ďalej zhlukovane na úrovni dní, týždňov a rokov pomocou algoritmu K-Medoids a metriky DTW (Dynamic Time Warping).
 
----
 
 ## Dáta
 Dáta boli získané z Dataportu , najväčšieho svetového zdroja údajov o spotrebe energie v domácnostiach. Táto platforma je súčasťou výskumnej organizácie **[Pecan Street ](https://www.pecanstreet.org)** , ktorá sa zaoberá zberom a analýzou dát o spotrebe energie a vody. Údaje použité v tejto práci obsahujú záznamy spotreby elektrickej energie domácností z troch regiónov:
@@ -25,14 +24,14 @@ Aby ste mohli použíť úplné dáta, musíte si vytvoriť účet a získať pr
 
 Tieto súbory je potrebné uložiť do koreňového priečinka pred spustením kódu.
 
----
+
 
 ## Požiadavky
 
 #### Verzia Pythonu: 3.9.6
 #### Požiadavky na knižnice použité v kóde sú uvedené v súbore _requirements.txt_ a návod na ich stiahnutie sa nachádza v súbore _NAVOD.md_.
 
----
+
 ## Prehľad súborov a ich účel (v poradí spustenia)
 
 | Súbor                  | Popis                                                                             |
@@ -45,7 +44,7 @@ Tieto súbory je potrebné uložiť do koreňového priečinka pred spustením k
 | `Modelovanie_rok.py`   | Ročné vektory, DTW medzi nimi, zhlukovanie, sezónna analýza                       |
 | `vizual.py`            | Vizualizácie: sezónnosť, entropia, frekvencie týždenných a denných zhlukov       |
 
----
+
 
 ## Výstupy
 

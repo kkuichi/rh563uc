@@ -138,7 +138,7 @@ print(df["n_missing"].value_counts().sort_index())
 tyzd_absen = 3
 df = df[df["n_missing"] <= tyzd_absen].reset_index(drop=True)
 
-#nahrada -1 najblizsim susedom
+#náhrada -1 najbližším susedom
 def tyzd_absen_na_nearest_neighbor(row):
     row_hodnoty = row[week_cols].tolist() #hodnoty vektora
     for i in range(len(row_hodnoty)):
@@ -163,7 +163,7 @@ def tyzd_absen_na_nearest_neighbor(row):
 print(f"\npočet ročnych vektorov po filtrovani: {len(df)}")
 df[week_cols] = df.apply(tyzd_absen_na_nearest_neighbor, axis=1) #nahradzovanie -1 najblizsim tyzdennym zhlukom
 
-#vypocet DTW medzi vektormi
+#vypočet DTW medzi vektormi
 def dtw_rok_vector(v1, v2, sim_matrix):
     n, m = len(v1), len(v2)
     dp = np.full((n + 1, m + 1), np.inf)

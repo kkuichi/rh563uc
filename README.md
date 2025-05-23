@@ -1,4 +1,4 @@
-# Systémová príručka k bakalárskej práci  
+# Používateľská príručka k bakalárskej práci  
 
 ---
 Tento repozitár obsahuje implementáciu a analýzu, ktorá bola vypracovaná v rámci bakalárskej práce s názvom:  
@@ -17,8 +17,6 @@ Dáta boli získané z Dataportu , najväčšieho svetového zdroja údajov o sp
 - **Austin, Texas**
 
 Kvôli licenčným podmienkam a ochrane osobných údajov dáta nie je možné verejne zdieľať.
-V priečinku `DATA_samples` sa nachádzajú súbory so vzorkou údajov pre každé mesto. Každý súbor (`ny_sample.csv`, `ca_sample.csv`, `au_sample.csv`) obsahuje dáta pre 3 domácnosti počas 7 dní.  
-Tieto súbory sú plne anonymizované a slúžia výlučne na ukážku predspracovania.
 Aby ste mohli použíť úplné dáta, musíte si vytvoriť účet a získať prístup ako súčasť univerzitnho výskumu  na [https://dataport.pecanstreet.org](https://dataport.pecanstreet.org) a manuálne si stiahnuť:
 
 - `newyork.csv`
@@ -31,8 +29,8 @@ Tieto súbory je potrebné uložiť do koreňového priečinka pred spustením k
 
 ## Požiadavky
 
-#### Verzia Pythonu: 3.12.7
-#### Požiadavky na knižnice použité v kóde sú uvedené v súbore _requirements.txt_ .
+#### Verzia Pythonu: 3.9.6
+#### Požiadavky na knižnice použité v kóde sú uvedené v súbore _requirements.txt_ a návod na ich stiahnutie sa nachádza v súbore _NAVOD.md_.
 
 ---
 ## Prehľad súborov a ich účel (v poradí spustenia)
@@ -63,16 +61,16 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
   Mapa indexov (dataid, day) pre `dtw_matrix_days.npy`.
 
 - `daily_clusters_6.csv`  
-  Výsledky zhlukovania dní do 6 denných typov s priradením ku každému dňu.
+  Výsledky zhlukovania dní do 6 denných typov (k=6) s priradením ku každému dňu.
 
 - `cluster_similarity_matrix.csv`  
   Matica DTW vzdialeností medzi priemernými profilmi denných zhlukov.
 
 - `weekly_patterns.csv`  
-  Týždenné vzory reprezentované ako reťazce 7 denných typov (napr. 0123204).
+  Týždenné vzory reprezentované ako reťazce 7 denných typov (napr. `0123204`).
 
 - `weekly_patterns_clustered_5.csv`  
-  Výsledky zhlukovania týždenných šablón do 5 týždenných typov.
+  Výsledky zhlukovania týždenných šablón do 5 týždenných typov (k=5).
 
 - `weekly_cluster_similarity_matrix.csv`  
   Matica podobnosti medzi medoidmi týždenných zhlukov, použitá na ročné DTW.
@@ -81,7 +79,7 @@ Po úspešnom spustení sa vytvoria nasledujúce výstupné súbory:
   Ročné vektory pre každú domácnosť (sekvencie 52 týždňových zhlukov).
 
 - `yearly_clustered_k4.csv`  
-  Finálne zhlukovanie domácností do 4 ročných skupín na základe ich ročného profilu.
+  Finálne zhlukovanie domácností do 4 ročných skupín (k=4) na základe ich ročného profilu.
 
 - `cluster_monthly_statistics.csv`  
   Agregovaná mesačná spotreba podľa ročného zhluku, vrátane priemeru za celý rok.

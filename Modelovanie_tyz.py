@@ -62,7 +62,7 @@ df_distance.to_csv("cluster_similarity_matrix.csv", index=True, float_format="%.
 #2)týždenne patterny 0000000 a t d
 import csv
 
-# nacitanie dennych klastrov
+#načitanie denných zhlukov 
 df = pd.read_csv("daily_clusters_6.csv")
 df["day"] = pd.to_datetime(df["day"])
 
@@ -73,7 +73,7 @@ df["week_end"] = df["week"].apply(lambda x: x.end_time)
 max_date = df["day"].max()
 df["week_end"] = df["week_end"].apply(lambda x: min(x, max_date))
 
-# vytvorenie tyzdennych patternov
+#tvorba týždenných patternov
 df_weekly = (
     df.sort_values("day")
       .groupby(["dataid", "week", "week_start", "week_end"])["cluster"]
@@ -101,15 +101,15 @@ df_weekly.to_csv(output_path, index=False, encoding="utf-8", quoting=csv.QUOTE_A
 
 
 
-#3)zhlukovanie tyzdennych paternov
+#3)zhlukovanie týždenných paternov
 from sklearn_extra.cluster import KMedoids
 from sklearn.metrics import silhouette_score
 
-# nacitanie tyzdnovych patternov (vzorov)
+#načitanie týždenných patternov (vzorov)
 df_tyz_pat = pd.read_csv("weekly_patterns.csv", dtype={"cluster": str})
 df_tyz_pat = df_tyz_pat[df_tyz_pat["cluster"].str.len() == 7].reset_index(drop=True)
 
-matica_tyz = pd.read_csv("cluster_similarity_matrix.csv", index_col=0) #matica podobnosti medzi dennymi klastrami
+matica_tyz = pd.read_csv("cluster_similarity_matrix.csv", index_col=0) #matica podobnosti medzi dennymi zhlukmi
 vzdial_zhluk = matica_tyz.values
 
 #funkcia pre výpočet vzdialenosti dvoch tźzdnovych vzorov
@@ -131,7 +131,7 @@ for i in range(n):
 zluk_range = range(2, 17)
 metrics = {"Silhouette": []}
 
-#priemerná spotreba pre denné klastry (na odhad tyždennej spotreby a zoradenia podľa spotreby)
+#priemerná spotreba pre denné zhluky (na odhad tyždennej spotreby a zoradenia podľa spotreby)
 priemer_daily = np.array([0.6, 1.2, 3.2, 5.5, 7.0, 9.0])
 
 for k in zluk_range:
@@ -161,7 +161,7 @@ for k in zluk_range:
     for indx, cnt in pd.Series(labels_sorted).value_counts().sort_index().items():
         print(f" ZHLUK {indx}: {cnt} týždňov")
 
-    #ulozenie pre 5 klastrov
+    #ulozenie pre 5 zhlukov
     if k == 5:
         out_cols = ["dataid", "week_start", "week_end", "cluster", "weekly_cluster"]
         out_df = df_tyz_pat.copy()
@@ -172,7 +172,7 @@ for k in zluk_range:
             encoding="utf-8",
             quoting=csv.QUOTE_ALL
         )
-        print("Ulozene weekly_patterns_clustered_5.csv s triedenymi klastrami")
+        
 
 #vykresľovanie silhouette score pre všetky k
 plt.figure(figsize=(10, 4))
